@@ -1,8 +1,24 @@
+<html>
 <head xmlns:th="http://www.springframework.org/schema/data/jaxb">
-    <link rel="stylesheet" type="text/css" th:href="@{/css/custom-css.css}"/>
+    <link rel="stylesheet" type="text/css" href="../static/css/custom-css.css">
 </head>
+
+<header>
+    <div class="header">
+        <a href="index.html">Proyecto Transversal</a>
+        <div class="header-right">
+            <a class="active" href="list-album.html">Lista Albunes</a>
+            <a href="list-canciones.html">Lista Canciones</a>
+            <a href="list-artistas.html">Lista Artistas</a>
+            <a href="list-generos.html">Lista Generos</a>
+            <a href="list-grupos.html">Lista Grupos</a>
+        </div>
+    </div>
+</header>
+
+<body>
 <div th:switch="${generos}" xmlns:th="http://www.w3.org/1999/xhtml">
-    <h2 th:case="null">No generos yet!</h2>
+    <h2 th:case="null">No hay generos disponibles!</h2>
     <div th:case="*">
         <h2>Generos</h2>
         <table>
@@ -20,3 +36,9 @@
     </div>
     <p><a href="/signup">Add a new genero</a></p>
 </div>
+</body>
+
+<footer>
+
+</footer>
+</html>

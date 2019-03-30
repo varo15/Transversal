@@ -21,7 +21,7 @@
 
 <body>
 <div th:switch="${canciones}" xmlns:th="http://www.w3.org/1999/xhtml">
-    <h2 th:case="null">No canciones yet!</h2>
+    <h2 th:case="null">No hay canciones disponibles!</h2>
     <div th:case="*">
         <h2>Canciones</h2>
         <table>
@@ -46,8 +46,8 @@
 </div>
 </body>
 
-<footer class="footer1">
-    <div class="footer-txt">
+<footer class="footer">
+    <div class="footer-text">
         <p>Proyecto Transversal &copy; 2015</p>
     </div>
 
