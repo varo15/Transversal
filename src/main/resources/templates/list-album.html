@@ -1,6 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
 <head xmlns:th="http://www.springframework.org/schema/data/jaxb">
-    <link rel="stylesheet" type="text/css" th:href="@{/css/custom-css.css}"/>
+    <link rel="stylesheet" type="text/css" href="../static/css/custom-css.css">
 </head>
+
+<header>
+    <div class="header">
+        <a href="#default" class="logo">Proyecto Transversal</a>
+        <div class="header-right">
+            <a class="active" href="list-album.html">Lista Albunes</a>
+            <a href="list-canciones.html">Lista Canciones</a>
+            <a href="list-artistas.html">Lista Artistas</a>
+            <a href="list-generos.html">Lista Generos</a>
+            <a href="list-grupos.html">Lista Grupos</a>
+        </div>
+    </div>
+</header>
+
+<body>
 <div th:switch="${albumes}" xmlns:th="http://www.w3.org/1999/xhtml">
     <h2 th:case="null">No albums yet!</h2>
     <div th:case="*">
@@ -24,5 +41,16 @@
             </tbody>
         </table>
     </div>
-    <p><a href="/add_album">Add a new album</a></p>
+    <div class="options">
+        <p><a href="/add_album">Nuevo album</a></p>
+    </div>
 </div>
+</body>
+
+<footer class="footer">
+    <div class="footer-text">
+        <p>Proyecto Transversal &copy; 2015</p>
+    </div>
+
+</footer>
+</html>
