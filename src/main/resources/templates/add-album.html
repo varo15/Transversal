@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+    <body>
+        <form action="#" th:action="@{/addAlbum}" th:object="${albumEntity}" method="post">
+            <label for="titulo">Titulo</label>
+            <input type="text" th:field="*{titulo}" id="titulo" placeholder="titulo">
+            <label for="precio">Precio</label>
+            <input type="text" th:field="*{precio}" id="precio" placeholder="precio">
+            <label for="fechaLanzamiento">Fecha de Lanzamiento</label>
+            <input type="date" th:field="*{fechaLanzamiento}" id="fechaLanzamiento" placeholder="fechaLanzamiento">
+            <label for="idGrupo">Grupo</label>
+            <select class="form-control" th:field="*{idGrupo}" id="idGrupo" name="idGrupo">
+                <option th:each="grupoEntity : ${grupos}" th:value="${grupoEntity.idGrupo}" th:text="${grupoEntity.idGrupo}+' : '+${grupoEntity.nombre}"></option>
+            </select>
+            <input type="submit" value="Add Album">
+        </form>
+    </body>
+</html>

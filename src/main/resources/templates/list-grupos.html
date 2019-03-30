@@ -1,0 +1,27 @@
+<head xmlns:th="http://www.springframework.org/schema/data/jaxb">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/custom-css.css}"/>
+</head>
+<div th:switch="${grupos}" xmlns:th="http://www.w3.org/1999/xhtml">
+    <h2 th:case="null">No grupos yet!</h2>
+    <div th:case="*">
+        <h2>Grupos</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>En Activo</th>
+                <th>Genero</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="grupo : ${grupos}">
+                <td th:text="${grupo.nombre}"></td>
+                <td th:if="${grupo.isActivo}==1">Activo</td>
+                <td th:unless="${grupo.isActivo}">Innactivo</td>
+                <td th:text="${grupo.generoEntity.nombre}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <p><a href="/signup">Add a new grupo</a></p>
+</div>

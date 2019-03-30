@@ -1,0 +1,24 @@
+<head xmlns:th="http://www.springframework.org/schema/data/jaxb">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/custom-css.css}"/>
+</head>
+<div th:switch="${canciones}" xmlns:th="http://www.w3.org/1999/xhtml">
+    <h2 th:case="null">No canciones yet!</h2>
+    <div th:case="*">
+        <h2>Canciones</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>Titulo</th>
+                <th>Duracion</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="cancion : ${canciones}">
+                <td th:text="${cancion.titulo}"></td>
+                <td th:text="${cancion.duracion}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <p><a href="/signup">Add a new cancion</a></p>
+</div>

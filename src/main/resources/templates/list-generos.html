@@ -1,0 +1,22 @@
+<head xmlns:th="http://www.springframework.org/schema/data/jaxb">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/custom-css.css}"/>
+</head>
+<div th:switch="${generos}" xmlns:th="http://www.w3.org/1999/xhtml">
+    <h2 th:case="null">No generos yet!</h2>
+    <div th:case="*">
+        <h2>Generos</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>Nombre</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="genero : ${generos}">
+                <td th:text="${genero.nombre}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <p><a href="/signup">Add a new genero</a></p>
+</div>

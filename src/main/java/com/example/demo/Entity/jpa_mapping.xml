@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.example.demo.Entity.AlbumEntity" table="Album" schema="transversal">
+        <id name="idAlbum">
+            <column name="id_album" sql-type="int(11)"/>
+        </id>
+        <property name="titulo">
+            <column name="titulo" sql-type="varchar(20)" length="20"/>
+        </property>
+        <property name="precio">
+            <column name="precio" sql-type="varchar(20)" length="20"/>
+        </property>
+        <property name="fechaLanzamiento">
+            <column name="fecha_lanzamiento" sql-type="date"/>
+        </property>
+    </class>
+    <class name="com.example.demo.Entity.ArtistaEntity" table="Artista" schema="transversal">
+        <id name="idArtista">
+            <column name="id_artista" sql-type="int(11)"/>
+        </id>
+        <property name="nombre">
+            <column name="Nombre" sql-type="varchar(20)" length="20"/>
+        </property>
+        <property name="apellidos">
+            <column name="Apellidos" sql-type="varchar(20)" length="20" not-null="true"/>
+        </property>
+        <property name="apodo">
+            <column name="Apodo" sql-type="varchar(20)" length="20" not-null="true"/>
+        </property>
+        <property name="fechaNacimiento">
+            <column name="Fecha_Nacimiento" sql-type="date"/>
+        </property>
+    </class>
+    <class name="com.example.demo.Entity.CancionEntity" table="Cancion" schema="transversal">
+        <id name="idCancion">
+            <column name="id_cancion" sql-type="int(11)"/>
+        </id>
+        <property name="titulo">
+            <column name="titulo" sql-type="varchar(20)" length="20"/>
+        </property>
+        <property name="duracion">
+            <column name="duracion" sql-type="double" precision="-1"/>
+        </property>
+    </class>
+    <class name="com.example.demo.Entity.GeneroEntity" table="Genero" schema="transversal">
+        <id name="idGenero">
+            <column name="id_genero" sql-type="int(11)"/>
+        </id>
+        <property name="nombre">
+            <column name="Nombre" sql-type="varchar(20)" length="20"/>
+        </property>
+    </class>
+    <class name="com.example.demo.Entity.GrupoEntity" table="Grupo" schema="transversal">
+        <id name="idGrupo">
+            <column name="id_grupo" sql-type="int(11)"/>
+        </id>
+        <property name="nombre">
+            <column name="nombre" sql-type="varchar(20)" length="20"/>
+        </property>
+        <property name="isActivo">
+            <column name="is_activo" sql-type="tinyint(1)"/>
+        </property>
+    </class>
+    <class name="com.example.demo.Entity.PerteneceEntity" table="Pertenece" schema="transversal">
+        <id name="idPertenece">
+            <column name="id_pertenece" sql-type="int(11)"/>
+        </id>
+
+        <property name="fechaEntrada">
+            <column name="fecha_entrada" sql-type="timestamp"/>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,28 @@
+<head xmlns:th="http://www.springframework.org/schema/data/jaxb">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/custom-css.css}"/>
+</head>
+<div th:switch="${albumes}" xmlns:th="http://www.w3.org/1999/xhtml">
+    <h2 th:case="null">No albums yet!</h2>
+    <div th:case="*">
+        <h2>Albumes</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>Titulo</th>
+                <th>Precio</th>
+                <th>Fecha de Lanzamiento</th>
+                <th>Nombre Grupo</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="album : ${albumes}">
+                <td th:text="${album.titulo}"></td>
+                <td th:text="${album.precio}"></td>
+                <td th:text="${album.fechaLanzamiento}"></td>
+                <td th:text="${album.grupoEntity.nombre}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <p><a href="/add_album">Add a new album</a></p>
+</div>

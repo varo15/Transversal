@@ -1,0 +1,28 @@
+<head xmlns:th="http://www.springframework.org/schema/data/jaxb">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/custom-css.css}"/>
+</head>
+<div th:switch="${artistas}" xmlns:th="http://www.w3.org/1999/xhtml">
+    <h2 th:case="null">No artistas yet!</h2>
+    <div th:case="*">
+        <h2>Artistas</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellidos</th>
+                <th>Apodo</th>
+                <th>Fecha de nacimiento</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="artista : ${artistas}">
+                <td th:text="${artista.nombre}"></td>
+                <td th:text="${artista.apellidos}"></td>
+                <td th:text="${artista.apodo}"></td>
+                <td th:text="${artista.fechaNacimiento}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <p><a href="/add_artista">Add a new artista</a></p>
+</div>
