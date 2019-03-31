@@ -1,27 +1,31 @@
-
-
-
-<html>
-<head xmlns:th="http://www.springframework.org/schema/data/jaxb">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Listado de grupos</title>
     <link rel="stylesheet" type="text/css" href="../static/css/custom-css.css">
+
+
 </head>
 
 <header>
     <div class="header">
         <a href="index.html">Proyecto Transversal</a>
         <div class="header-right">
-            <a class="active" href="list-album.html">Lista Albunes</a>
+            <a href="list-album.html">Lista Albunes</a>
             <a href="list-canciones.html">Lista Canciones</a>
             <a href="list-artistas.html">Lista Artistas</a>
             <a href="list-generos.html">Lista Generos</a>
             <a href="list-grupos.html">Lista Grupos</a>
+            <a href="add-album.html">Añadir Album</a>
+            <a href="add-artista.html">Añadir Artista</a>
         </div>
     </div>
 </header>
 
 <body>
 <div th:switch="${grupos}" xmlns:th="http://www.w3.org/1999/xhtml">
-    <h2 th:case="null">No grupos yet!</h2>
+    <h2 th:case="null">No hay grupos musicales disponibles.</h2>
     <div th:case="*">
         <h2>Grupos</h2>
         <table>
@@ -48,7 +52,7 @@
 
 <footer class="footer">
     <div class="footer-text">
-        <p>Proyecto Transversal &copy; 2015</p>
+        <p>Proyecto Transversal &copy; 2019</p>
     </div>
 
 </footer>
