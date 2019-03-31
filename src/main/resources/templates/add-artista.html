@@ -3,25 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <title>Añadir Artista</title>
-    <link rel="stylesheet" type="text/css" href="../static/css/custom-css.css">
+    <link rel="stylesheet" type="text/css" href="/../static/css/custom-css.css">
 </head>
 <header>
     <div class="header">
         <a href="index.html">Proyecto Transversal</a>
         <div class="header-right">
-            <a href="list-album.html">Lista Albunes</a>
-            <a href="list-canciones.html">Lista Canciones</a>
-            <a href="list-artistas.html">Lista Artistas</a>
-            <a href="list-generos.html">Lista Generos</a>
-            <a href="list-grupos.html">Lista Grupos</a>
-            <a href="add-album.html">Añadir Album</a>
-            <a href="add-artista.html">Añadir Artista</a>
+            <a href="/list_album">Lista Albunes</a>
+            <a href="/list_cancion">Lista Canciones</a>
+            <a href="/list_artista">Lista Artistas</a>
+            <a href="/list_genero">Lista Generos</a>
+            <a href="/list_grupo">Lista Grupos</a>
+            <a href="/add_album">Añadir Album</a>
+            <a href="/add_artista">Añadir Artista</a>
         </div>
     </div>
 </header>
 </header>
 <body>
-</body>br>
+</body>
+</br>
 <form action="#" th:action="@{/addArtista}" th:object="${artistaEntity}" method="post">
     <label for="nombre">Nombre</label>
     <input type="text" th:field="*{nombre}" id="nombre" placeholder="nombre">
